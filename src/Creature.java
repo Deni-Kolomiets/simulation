@@ -2,6 +2,7 @@ public abstract class Creature extends Entity {
     private int hp;
     private int step;
     private String name;
+    BFS bfs = new BFS();
 
     public Creature(String name, int hp, int step) {
         super();
@@ -10,7 +11,16 @@ public abstract class Creature extends Entity {
         this.step = step;
     }
 
-    public abstract void makeMove();
+    public abstract Coordinates makeMove(Creature creature, Coordinates coordinates);
+
+
+    public void setHp(int hp) {
+        this.hp = hp;
+    }
+
+    public void setStep(int step) {
+        this.step = step;
+    }
 
     public int getHp() {
         return hp;
